@@ -18,17 +18,18 @@ import javax.persistence.ManyToOne;
 
 public class Product extends AbsEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "category_id",referencedColumnName = "id")
-    private Category category;
+  //  @ManyToOne
+ //   @JoinColumn(name = "category_id",referencedColumnName = "id")
+    //private Category category;
 
-    @ManyToOne
-    @JoinColumn(name = "photo_id",referencedColumnName = "id")
-    private Attachment photo;
+  //  @ManyToOne
+ //   @JoinColumn(name = "photo_id",referencedColumnName = "id")
+ //   private Attachment photo;
 
     private String code;
 
     @ManyToOne
-    @JoinColumn(name = "measurement_id",referencedColumnName = "id")
+
+//    @JoinColumn(name = "measurement_id",referencedColumnName = "id")
     private Measurement measurement;
 }

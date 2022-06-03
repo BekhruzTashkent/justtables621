@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Data
 //remove allArg and noArg
 @Entity
-
+@Table(name = "measurement" )
 public class Measurement extends AbsEntity {
 
 //all data field in AbsEntity
