@@ -16,6 +16,10 @@ import javax.persistence.*;
 
 public class Product extends AbsEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
    @OneToOne(cascade = CascadeType.PERSIST)
    private Category category;
 
