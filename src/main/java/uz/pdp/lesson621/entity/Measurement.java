@@ -11,13 +11,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)// we need this because in AbsEntity there such methods and we should implement them here
+//@EqualsAndHashCode(callSuper = true)// we need this because in AbsEntity there such methods and we should implement them here
 @Data
 //remove allArg and noArg
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "measurement" )
-public class Measurement extends AbsEntity {
 
+public class Measurement  {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
 //all data field in AbsEntity
 
 }

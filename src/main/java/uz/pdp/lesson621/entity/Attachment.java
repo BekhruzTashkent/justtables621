@@ -22,7 +22,7 @@ public class Attachment {
     private String name;
 
     @Column(nullable = false)
-    private Integer size;
+    private String size;
 
     @Column(nullable = false)
     private String contentType;

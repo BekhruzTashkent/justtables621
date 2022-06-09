@@ -6,9 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.pdp.lesson621.entity.template.AbsEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -18,18 +16,33 @@ import javax.persistence.ManyToOne;
 
 public class Product extends AbsEntity {
 
-  //  @ManyToOne
- //   @JoinColumn(name = "category_id",referencedColumnName = "id")
-    //private Category category;
+   @OneToOne(cascade = CascadeType.PERSIST)
+   private Category category;
 
-  //  @ManyToOne
- //   @JoinColumn(name = "photo_id",referencedColumnName = "id")
- //   private Attachment photo;
+   @OneToOne(cascade = CascadeType.PERSIST)
+   private Attachment photo;
 
     private String code;
 
-    @ManyToOne
+ //   @OneToOne
+  //  private Measurement measurement;
 
-//    @JoinColumn(name = "measurement_id",referencedColumnName = "id")
-    private Measurement measurement;
+    public void setCategory(Category category){
+        category.setName(String.valueOf(this));
+        this.category = category;
+    }
+
+    public void setPhoto(Attachment photo){
+        photo.setName(String.valueOf(this));
+        photo.setContentType(String.valueOf(this));
+        photo.setSize(String.valueOf(this));
+
+        this.photo=photo;
+    }
+
+//    public void setMeasurement(Measurement measurement){
+//        measurement.setName(String.valueOf(this));
+//
+//        this.measurement=measurement;
+//    }
 }
